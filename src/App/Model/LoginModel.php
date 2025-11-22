@@ -3,10 +3,10 @@
 /**
  * Login Model
  * All functionality pertaining to Login Model.
- * PHP version 8.2.0
+ * PHP version 8.3.24
  *
- * @category Login
- * @package  Login
+ * @category Model
+ * @package  LoginModel
  * @author   Manuel Parra <manuelparra@live.com.ar>
  * @license  MIT <https://mit.org>
  * @version  GIT: 1.0.0

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * NavBar.
  * Contents of the NavBar
@@ -12,24 +13,25 @@
  * @link     manuelparra.dev
  */
 
+namespace App\View\Include;
+
 use App\Controller\LoginController;
 
 if (!isset($insLoginController)) {
     $insLoginController = new LoginController();
 }
 
-$idSpm = $insLoginController->encryptData($_SESSION['id_spm'])
+$id = $insLoginController->encryptData($_SESSION['id'])
 ?>
 
 <nav class="full-box navbar-info">
     <a href="#" class="float-left show-nav-lateral">
         <i class="fas fa-exchange-alt"></i>
     </a>
-    <a href="<?php echo SERVER_URL . 'user-update/' . $idSpm  . '/'; ?>">
+    <a href="<?= SERVER_URL . '/user-update/' . $id  . '/' ?>">
         <i class="fas fa-user-cog"></i>
     </a>
     <a href="#" class="btn-exit-system">
         <i class="fas fa-power-off"></i>
     </a>
 </nav>
-

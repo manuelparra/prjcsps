@@ -6,7 +6,7 @@
  * PHP version 8.2.0
  *
  * @category Controller
- * @package  Controller
+ * @package  LoginController
  * @author   Manuel Parra <manuelparra@live.com.ar>
  * @license  MIT <https://mit.org>
  * @version  GIT: 1.0.0
@@ -124,15 +124,15 @@ class LoginController extends LoginModel
                 return null;
             }
 
-            session_start(['name' => 'SPM']);
+            session_start(['name' => 'CSPS']);
 
-            $_SESSION['id_spm'] = $row['usuario_id'];
-            $_SESSION['nombre_spm'] = $row['usuario_nombre'];
-            $_SESSION['apellido_spm'] = $row['usuario_apellido'];
-            $_SESSION['usuario_spm'] = $row['usuario_usuario'];
-            $_SESSION['privilegio_spm'] = $row['usuario_privilegio'];
-            $_SESSION['perfil_spm'] = $row['perfil_nombre'];
-            $_SESSION['token_spm'] = md5(uniqid(mt_rand(), true));
+            $_SESSION['id'] = $row['usuario_id'];
+            $_SESSION['nombre'] = $row['usuario_nombre'];
+            $_SESSION['apellido'] = $row['usuario_apellido'];
+            $_SESSION['usuario'] = $row['usuario_usuario'];
+            $_SESSION['privilegio'] = $row['usuario_privilegio'];
+            $_SESSION['perfil'] = $row['perfil_nombre'];
+            $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
             return header("Location: " . SERVER_URL . "/home/");
         } else {
