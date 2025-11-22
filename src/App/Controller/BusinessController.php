@@ -2,9 +2,8 @@
 
 /**
  * Bussiness Controller
- *
  * All functionality pertaining to Business Controller.
- * PHP version 8.2.0
+ * PHP version 8.3.24
  *
  * @category Config
  * @package  Config
@@ -58,7 +57,8 @@ class BusinessController extends BusinessModel
         $direccion = BusinessModel::cleanString($_POST['empresa_direccion_reg']);
 
         // Check empty fields
-        if ($nif == "" || $nombre == "" || $email == ""
+        if (
+            $nif == "" || $nombre == "" || $email == ""
             || $telefono == "" || $direccion == ""
         ) {
             return BusinessModel::messageWithParameters(
@@ -163,7 +163,8 @@ class BusinessController extends BusinessModel
         $direccion = BusinessModel::cleanString($_POST['empresa_direccion_upd']);
 
         // Chequeo que no haya campos vacíos
-        if ($nif == "" || $nombre == "" || $email == ""
+        if (
+            $nif == "" || $nombre == "" || $email == ""
             || $telefono == "" || $direccion == ""
         ) {
             return BusinessModel::messageWithParameters(

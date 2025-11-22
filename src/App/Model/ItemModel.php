@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Item Model
  * All functionality pertaining to Item Model.
@@ -12,12 +13,7 @@
  * @link     manuelparra.dev
  */
 
-if (!defined('__ROOT__')) {
-
-if (!defined('__ROOT__')) {
-    echo "Acceso no autorizado.";
-    exit; // Exit if accessed directly
-}
+namespace App\Model;
 
 /**
  * Class Item Model
@@ -40,7 +36,6 @@ class ItemModel extends MainModel
      */
     protected static function addItemModel($data): object
     {
-        // SQL Query for insert item
         $sql = "INSERT INTO item (item_codigo, item_nombre,
                 item_stock, item_estado, item_detalle)
                 VALUE (:codigo, :nombre, :stock, :estado, :detalle)";

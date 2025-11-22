@@ -3,7 +3,7 @@
 /**
  * Index File
  * Entry point of the application.
- * PHP version 8.3
+ * PHP version 8.3.24
  *
  * @category FrontController
  * @package  App

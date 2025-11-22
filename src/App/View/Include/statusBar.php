@@ -1,4 +1,5 @@
 <?php
+
 /**
  * StatusBar
  * Contents of the StatusBar
@@ -11,15 +12,18 @@
  * @version  CVS: <1.0.0>
  * @link     manuelparra.dev
  */
+
+namespace App\View\Include;
+
 ?>
 
 <footer class="fixed-bottom status-bar">
     <div class="full-box">
         USUARIO:
         <?php
-        echo strtoupper($_SESSION['nombre_spm'])
+        echo strtoupper($_SESSION['nombre'])
         . ' '
-        . strtoupper($_SESSION['apellido_spm']);
+        . strtoupper($_SESSION['apellido']);
         ?>
     </div>
 </footer>

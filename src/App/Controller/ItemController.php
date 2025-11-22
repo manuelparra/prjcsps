@@ -406,8 +406,8 @@ class ItemController extends ItemModel
         }
 
         // checking privilages of current user
-        session_start(['name' => 'SPM']);
-        if ($_SESSION['privilegio_spm'] != 1) {
+        session_start(['name' => 'CSPS']);
+        if ($_SESSION['privilegio'] != 1) {
             return ItemModel::messageWithParameters(
                 "simple",
                 "error",

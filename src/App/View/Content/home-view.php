@@ -1,8 +1,9 @@
 <?php
+
 /**
- * Home View.
- * Contents of the Home page view.
- * PHP version 8.2.0
+ * Content Home View.
+ * Content of the Home page view.
+ * PHP version 8.3.24
  *
  * @category View
  * @package  ViewContent
@@ -12,12 +13,15 @@
  * @link     manuelparra.dev
  */
 
+namespace App\View\Content;
+
 use App\Controller\{
     ClientController,
     ItemController,
     BusinessController,
     UserController
 };
+
 ?>
 
 <!-- Page header -->
@@ -41,7 +45,7 @@ use App\Controller\{
     $word = $query->rowCount() > 0 ? "Registros" : "Registro";
     ?>
 
-    <a href="<?php echo SERVER_URL; ?>/client-list/" class="tile">
+    <a href="<?= SERVER_URL . '/client-list/' ?>" class="tile">
         <div class="tile-tittle">Clientes</div>
         <div class="tile-icon">
             <i class="fas fa-users fa-fw"></i>
@@ -59,7 +63,7 @@ use App\Controller\{
     $word = $query->rowCount() > 0 ? "Registros" : "Registro";
     ?>
 
-    <a href="<?php echo SERVER_URL; ?>/item-list/" class="tile">
+    <a href="<?= SERVER_URL . '/item-list/' ?>" class="tile">
         <div class="tile-tittle">Items</div>
         <div class="tile-icon">
             <i class="fas fa-pallet fa-fw"></i>
@@ -71,7 +75,7 @@ use App\Controller\{
         </div>
     </a>
 
-    <a href="<?php echo SERVER_URL; ?>/loan-reservation/" class="tile">
+    <a href="<?= SERVER_URL . '/loan-reservation/' ?>" class="tile">
         <div class="tile-tittle">Reservaciones</div>
         <div class="tile-icon">
             <i class="far fa-calendar-alt fa-fw"></i>
@@ -79,7 +83,7 @@ use App\Controller\{
         </div>
     </a>
 
-    <a href="<?php echo SERVER_URL; ?>/loan-pending/" class="tile">
+    <a href="<?= SERVER_URL . '/loan-pending/' ?>" class="tile">
         <div class="tile-tittle">Prestamos</div>
         <div class="tile-icon">
             <i class="fas fa-hand-holding-usd fa-fw"></i>
@@ -87,7 +91,7 @@ use App\Controller\{
         </div>
     </a>
 
-    <a href="<?php echo SERVER_URL; ?>/loan-list/" class="tile">
+    <a href="<?= SERVER_URL . '/loan-list/' ?>" class="tile">
         <div class="tile-tittle">Finalizados</div>
         <div class="tile-icon">
             <i class="fas fa-clipboard-list fa-fw"></i>
@@ -96,14 +100,14 @@ use App\Controller\{
     </a>
 
     <?php
-    if ($_SESSION['privilegio_spm'] == 1) {
+    if ($_SESSION['privilegio'] == 1) {
         $insUserController = new UserController();
 
         $query = $insUserController->queryDataUserController("Count");
         $word = $query->rowCount() > 0 ? "Registros" : "Registro";
         ?>
 
-        <a href="<?php echo SERVER_URL; ?>/user-list/" class="tile">
+        <a href="<?= SERVER_URL . '/user-list/' ?>" class="tile">
             <div class="tile-tittle">Usuarios</div>
             <div class="tile-icon">
                 <i class="fas fa-user-secret fa-fw"></i>
@@ -120,7 +124,7 @@ use App\Controller\{
         $query = $instBusinessController->queryBusinessInformationController();
         ?>
 
-        <a href="<?php echo SERVER_URL; ?>/company/" class="tile">
+        <a href="<?= SERVER_URL . '/company/' ?>" class="tile">
             <div class="tile-tittle">Empresa</div>
             <div class="tile-icon">
                 <i class="fas fa-store-alt fa-fw"></i>

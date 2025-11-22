@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Logout.
  * Contents of the Logout
@@ -12,19 +13,20 @@
  * @link     manuelparra.dev
  */
 
+namespace App\View\Include;
+
 use App\Controller\LoginController;
 
 if (!isset($insLoginController)) {
     $insLoginController = new LoginController();
 }
 
-$tokenSpm = $insLoginController->encryptData($_SESSION['token_spm']);
-$userSpm = $insLoginController->encryptData($_SESSION['usuario_spm']);
+$token = $insLoginController->encryptData($_SESSION['token']);
+$user = $insLoginController->encryptData($_SESSION['usuario']);
 ?>
 
 <script>
-let btn_exit_system = document.querySelector(".btn-exit-system");
-
+    let btn_exit_system = document.querySelector(".btn-exit-system");
     btn_exit_system.addEventListener('click', function(e) {
         e.preventDefault();
         Swal.fire({
@@ -38,12 +40,12 @@ let btn_exit_system = document.querySelector(".btn-exit-system");
             cancelButtonText: 'No, cancelar'
         }).then((result) => {
             if (result.value) {
-                let url = '<?php echo SERVER_URL . '/endpoint/login-ajax/'; ?>';
-                let token = '<?php echo $tokenSpm ?>';
-                let usuario = '<?php echo $userSpm; ?>';
+                let url = '<?= SERVER_URL . '/endpoint/login-ajax/' ?>';
+                let token = '<?= $token ?>';
+                let user = '<?= $user ?>';
                 let data = new FormData();
                 data.append("token", token);
-                data.append("usuario", usuario);
+                data.append("usuario", user);
 
                 fetch(url, {
                     method: 'POST',
@@ -58,4 +60,4 @@ let btn_exit_system = document.querySelector(".btn-exit-system");
             }
         });
     });
- </script>
+</script>

@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Business Model
  * All functionality pertaining to Item Model.
- * PHP version 8.2.0
+ * PHP version 8.3.24
  *
  * @category Model
  * @package  BusinessModel
@@ -13,11 +14,6 @@
  */
 
 namespace App\Model;
-
-if (!defined('__ROOT__')) {
-    echo "Acceso no autorizado.";
-    exit; // Exit if accessed directly
-}
 
 /**
  * Class Business Model

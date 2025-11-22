@@ -34,8 +34,6 @@ class MainModel
      */
     protected static function connection(): object
     {
-        require_once __ROOT__ . "/src/App/Config/server.php";
-
         try {
             $conn = new \PDO(CONNECTIONSTRING, USER, PASSWORD);
         } catch (\PDOException $e) {

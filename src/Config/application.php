@@ -20,19 +20,19 @@
 
 // Local Enviroment (macOS), comment this lines if you put this files in a
 // production environment,
-const SERVER_URL = "https://syscmms:8891";
-const ERROR_DIR = "/Users/manuel/Sites/syscmms/logs";
+const SERVER_URL = "https://syscsps:8892";
+const ERROR_DIR = "/Users/manuel/Sites/prjcsps/logs";
 
 // Production Enviroment, comment this lines if you put this files in a developer
 // environment
 //const SERVER_URL = "https://prestamos.desliate.com";
-//const ERROR_DIR = "/var/www/desliate.com/prestamos/logs/";
+//const ERROR_DIR = "/var/www/desliate.com/prestamos/logs";
 
 // Variables globales
 global $currentPage;
 
 // Constantes del sistema
-const COMPANY = "Sistema de Mantenimiento";
+const COMPANY = "Salt Production";
 const MONEDA = "€";
 
 date_default_timezone_set("Europe/Madrid");

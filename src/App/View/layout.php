@@ -41,22 +41,22 @@ use App\Controller\{ViewController, LoginController};
     <body>
         <?php
         // $IV, instanacia de la vista
-        $IV = new ViewController();
+        $insView = new ViewController();
 
-        $view = $IV->getViewController();
+        $view = $insView->getViewController();
 
         if ($view == "login" || $view == "404") {
             include_once __ROOT__ . "/src/App/View/Content/" . $view . "-view.php";
         } else {
-            session_start(['name' => 'SPM']);
+            session_start(['name' => 'CSPS']);
 
             $_SESSION['currentPage'] = explode("/", $_GET['view']);
 
             $insLoginController = new LoginController();
 
             if (
-                !isset($_SESSION['token_spm']) || !isset($_SESSION['usuario_spm'])
-                || !isset($_SESSION['privilegio_spm']) || !isset($_SESSION['id_spm'])
+                !isset($_SESSION['token']) || !isset($_SESSION['usuario'])
+                || !isset($_SESSION['privilegio']) || !isset($_SESSION['id'])
             ) {
                 echo $insLoginController->forceCloseSessionController();
                 exit; // Exit after force to close session

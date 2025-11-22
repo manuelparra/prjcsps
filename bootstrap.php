@@ -26,6 +26,9 @@ function bootstrap(): void
     // Configuración global de la app
     require_once __ROOT__ . '/src/Config/application.php';
 
+    // Configuración global para la conección a la base de datos
+    require_once __ROOT__ . '/src/Config/server.php';
+
     // Configuracion de seguridad de la app
-    require_once __ROOT__  . '/src/Config/security.php';
+    require_once __ROOT__ . '/src/Config/security.php';
 }

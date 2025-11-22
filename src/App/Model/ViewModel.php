@@ -45,8 +45,8 @@ class ViewModel
         $content = "404";
 
         if (in_array($view, $whiteListView)) {
-            if (is_file(__ROOT__ . "/App/View/Content/" . $view . "-view.php")) {
-                $content = "/App/View/Content/" . $view . "-view.php";
+            if (is_file(__ROOT__ . "/src/App/View/Content/" . $view . "-view.php")) {
+                $content = "/src/App/View/Content/" . $view . "-view.php";
             }
         } elseif ($view == "login" || $view == "index") {
             $content = "login";
