@@ -31,24 +31,30 @@ use App\Controller\{
         &nbsp;DASHBOARD
     </h3>
     <p class="text-justify">
-        Sistema para la gestión de prestamos, este es el panel principal del
-        sistema, en esta vista puede seleccionar cualquiera de las opciones
-        que se muestran.
+        Sistema para la gestión de control de procesos,
+        análisis de laboratorio,
+        emisión de certificados de calidad y
+        gestión de clientes para la producción industrial de sal.
     </p>
 </div>
 
 <!-- Content -->
 <div class="full-box tile-container">
     <?php
-    $instClientController = new ClientController();
-    $query = $instClientController->queryDataClientController("Count");
+    $instItemController = new ItemController();
+    $query = $instItemController->queryDataItemController("Count");
     $word = $query->rowCount() > 0 ? "Registros" : "Registro";
     ?>
 
-    <a href="<?= SERVER_URL . '/client-list/' ?>" class="tile">
-        <div class="tile-tittle">Clientes</div>
+    <a href="<?= SERVER_URL . '/process-control/' ?>" class="tile">
+        <div class="tile-tittle">PROCESOS</div>
         <div class="tile-icon">
-            <i class="fas fa-users fa-fw"></i>
+            <i
+                class="fas fa-users fa-fw"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Control de Procesos"
+            ></i>
             <p>
                 <?php
                 echo $query->rowCount();
@@ -63,10 +69,15 @@ use App\Controller\{
     $word = $query->rowCount() > 0 ? "Registros" : "Registro";
     ?>
 
-    <a href="<?= SERVER_URL . '/item-list/' ?>" class="tile">
-        <div class="tile-tittle">Items</div>
+    <a href="<?= SERVER_URL . '/laboratory-analysis/' ?>" class="tile">
+        <div class="tile-tittle">LABORATORIO</div>
         <div class="tile-icon">
-            <i class="fas fa-pallet fa-fw"></i>
+            <i
+                class="fas fa-bong fa-fw"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Análisis de Laboratorio"
+            ></i>
             <p>
                 <?php
                 echo $query->rowCount();
@@ -75,27 +86,49 @@ use App\Controller\{
         </div>
     </a>
 
-    <a href="<?= SERVER_URL . '/loan-reservation/' ?>" class="tile">
-        <div class="tile-tittle">Reservaciones</div>
+    <?php
+    $instItemController = new ItemController();
+    $query = $instItemController->queryDataItemController("Count");
+    $word = $query->rowCount() > 0 ? "Registros" : "Registro";
+    ?>
+
+    <a href="<?= SERVER_URL . '/quality-certificates/' ?>" class="tile">
+        <div class="tile-tittle">CERTIFICADOS</div>
         <div class="tile-icon">
-            <i class="far fa-calendar-alt fa-fw"></i>
-            <p>30 Registros</p>
+            <i
+                class="fas fa-file fa-fw"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Certificados de Calidad"
+            ></i>
+            <p>
+                <?php
+                echo $query->rowCount();
+                ?>&nbsp;<?php echo $word; ?>
+            </p>
         </div>
     </a>
 
-    <a href="<?= SERVER_URL . '/loan-pending/' ?>" class="tile">
-        <div class="tile-tittle">Prestamos</div>
-        <div class="tile-icon">
-            <i class="fas fa-hand-holding-usd fa-fw"></i>
-            <p>200 Registros</p>
-        </div>
-    </a>
+    <?php
+    $instClientController = new ClientController();
+    $query = $instClientController->queryDataClientController("Count");
+    $word = $query->rowCount() > 0 ? "Registros" : "Registro";
+    ?>
 
-    <a href="<?= SERVER_URL . '/loan-list/' ?>" class="tile">
-        <div class="tile-tittle">Finalizados</div>
+    <a href="<?= SERVER_URL . '/client-list/' ?>" class="tile">
+        <div class="tile-tittle">Clientes</div>
         <div class="tile-icon">
-            <i class="fas fa-clipboard-list fa-fw"></i>
-            <p>700 Registros</p>
+            <i
+                class="fas fa-user fa-fw"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Clientes"
+            ></i>
+            <p>
+                <?php
+                echo $query->rowCount();
+                ?>&nbsp;<?php echo $word; ?>
+            </p>
         </div>
     </a>
 
