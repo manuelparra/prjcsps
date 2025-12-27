@@ -32,26 +32,26 @@ namespace App\View\Include;
                 <li>
                     <a href="#" class="nav-btn-submenu">
                         <i class="fas fa-users fa-fw"></i>
-                        &nbsp;Clientes
+                        &nbsp;Control de procesos
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul>
                         <li>
                             <a href="<?= SERVER_URL . '/client-new/' ?>">
                                 <i class="fas fa-plus fa-fw"></i>
-                                &nbsp;Agregar Cliente
+                                &nbsp;Agregar registro
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/client-list/' ?>">
                                 <i class="fas fa-clipboard-list fa-fw"></i>
-                                &nbsp;Lista de clientes
+                                &nbsp;Lista de registros
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/client-search/' ?>">
                                 <i class="fas fa-search fa-fw"></i>
-                                &nbsp;Buscar cliente
+                                &nbsp;Buscar registro
                             </a>
                         </li>
                     </ul>
@@ -59,72 +59,85 @@ namespace App\View\Include;
 
                 <li>
                     <a href="#" class="nav-btn-submenu">
-                        <i class="fas fa-pallet fa-fw"></i>
-                        &nbsp;Items
+                        <i class="fas fa-bong fa-fw"></i>
+                        &nbsp;Análisis de laboratorio
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul>
                         <li>
                             <a href="<?= SERVER_URL . '/item-new/' ?>">
                                 <i class="fas fa-plus fa-fw"></i>
-                                &nbsp;Agregar item
+                                &nbsp;Nuevo análisis
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/item-list/' ?>">
                                 <i class="fas fa-clipboard-list fa-fw"></i>
-                                &nbsp;Lista de items
+                                &nbsp;Listado de análisis
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/item-search/' ?>">
                                 <i class="fas fa-search fa-fw"></i>
-                                &nbsp;Buscar item
+                                &nbsp;Buscar análisis
                             </a>
                         </li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="#" class="nav-btn-submenu">
-                        <i class="fas fa-file-invoice-dollar fa-fw"></i>
-                        &nbsp;Préstamos
+                        <i class="fas fa-file fa-fw"></i>
+                        &nbsp;Certificados de calidad
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <ul>
                         <li>
                             <a href="<?= SERVER_URL . '/loan-new/' ?>">
                                 <i class="fas fa-plus fa-fw"></i>
-                                &nbsp;Nuevo préstamo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= SERVER_URL . '/loan-reservation/' ?>">
-                                <i class="far fa-calendar-alt fa-fw"></i>
-                                &nbsp;Reservaciones
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= SERVER_URL . '/loan-pending/' ?>">
-                                <i class="fas fa-hand-holding-usd fa-fw"></i>
-                                &nbsp;Préstamos
+                                &nbsp;Nuevo Certifiacado
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/loan-list/' ?>">
                                 <i class="fas fa-clipboard-list fa-fw"></i>
-                                &nbsp;Finalizados
+                                &nbsp;Listado de Certificados
                             </a>
                         </li>
                         <li>
                             <a href="<?= SERVER_URL . '/loan-search/' ?>">
                                 <i class="fas fa-search-dollar fa-fw"></i>
-                                &nbsp;Buscar por fecha
+                                &nbsp;Buscar Certificados
                             </a>
                         </li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="#" class="nav-btn-submenu">
+                        <i class="fas fa-user fa-fw"></i>
+                        &nbsp;Clientes
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="<?= SERVER_URL . '/loan-new/' ?>">
+                                <i class="fas fa-plus fa-fw"></i>
+                                &nbsp;Nuevo Cliente
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= SERVER_URL . '/loan-list/' ?>">
+                                <i class="fas fa-user fa-fw"></i>
+                                &nbsp;Listado de Cilentes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= SERVER_URL . '/loan-search/' ?>">
+                                <i class="fas fa-search fa-fw"></i>
+                                &nbsp;Buscar Cliente
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <?php
                 if ($_SESSION['privilegio'] == 1) {
                     ?>
